@@ -1,8 +1,17 @@
 // fetch issues
 const loadIssues = async () => {
-    const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
-    const data = await res.json();
-    displayIssues(data.data);
+    showSpinner();
+    try {
+        setTimeout(async () => {
+            const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
+            const data = await res.json();
+            displayIssues(data.data);
+            removeSpinner();
+        }, 2000)
+    }
+    catch (err) {
+        alert('Error', err);
+    }
 }
 
 // display issues
