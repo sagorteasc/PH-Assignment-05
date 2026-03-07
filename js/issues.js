@@ -13,10 +13,10 @@ const displayIssues = (issues) => {
         // console.log(issue);
         const issueCards = document.createElement('div');
         issueCards.innerHTML = `
-            <div class="card bg-base-100 h-full shadow-sm">
+            <div class="card bg-base-100 h-full shadow-sm border-t-5 ${issue.status === 'open' ? 'border-t-[rgb(99,230,190)]' : 'border-t-[rgb(177,151,252)]'}">
                 <div class="flex flex-col gap-0.5 p-6 flex-grow">
                     <div class="flex justify-between mb-3">
-                        <img src=${issue.priority === 'high' ? "assets/Open-Status.png" : "assets/Closed-Status.png"} alt="">
+                        <img src=${issue.status === 'open' ? "assets/Open-Status.png" : "assets/Closed-Status.png"} alt="">
                         <h3 class="btn font-medium text-sm rounded-[100px] ${issue.priority === 'high' ? 'bg-[#FEECEC] text-[#EF4444]' : issue.priority === 'medium' ? 'bg-[#FFF6D1] text-[#F59E0B]' : 'bg-[#EEEFF2] text-[#9CA3AF]'}">
                         ${issue.priority === 'high' ? 'HIGH' : issue.priority === 'medium' ? 'MEDIUM' : 'LOW'}
                         </h3>
