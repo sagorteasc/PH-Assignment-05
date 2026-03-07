@@ -33,12 +33,12 @@
                     <div>
                         <label class="input validator join-item">
                             <div class="flex items-center justify-center gap-1 text-[#64748B]">
-                                <i class="fa-brands fa-sistrix"></i><input type="text" placeholder="Search issues..."
-                                    required />
+                                <i class="fa-brands fa-sistrix"></i><input id="input" type="text"
+                                    placeholder="Search issues..." />
                             </div>
                         </label>
                     </div>
-                    <button class="btn btn-primary font-semibold join-item">
+                    <button id="search" class="btn btn-primary font-semibold join-item">
                         Search
                     </button>
                 </div>
@@ -83,6 +83,7 @@
             <!-- issues -->
             <div class="bg-[#FBFBFB] shadow-lg rounded-md p-3 md:p-5">
                 <div id="issues" class="grid grid-cols-1 gap-3 md:gap-4 md:grid-cols-2 lg:grid-cols-4"></div>
+
                 <!-- spinner -->
                 <div id="spinner" class="hidden min-h-screen">
                     <span class="loading loading-dots loading-md"></span>
@@ -108,6 +109,7 @@
     <script src="js/spinner.js"></script>
     <script src="js/issues.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/search.js"></script>
 </body>
 
 </html>
