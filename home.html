@@ -86,9 +86,30 @@
                 <div id="issues" class="grid grid-cols-1 gap-3 md:gap-4 md:grid-cols-2 lg:grid-cols-4"></div>
             </div>
         </section>
+
+        <!-- modal section -->
+        <section>
+            <!-- <dialog id="issue-detail" class="modal">
+                <div id="modal-container" class="modal-box">
+                </div>
+            </dialog> -->
+
+            <!-- Open the modal using ID.showModal() method -->
+            <dialog id="issue-detail" class="modal">
+                <div class="modal-box">
+                    <div id="modal-container"></div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn btn-primary">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </section>
     </main>
 
     <script src="js/issues.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>
