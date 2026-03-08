@@ -13,15 +13,12 @@ document.getElementById('search').addEventListener('click', function () {
     searchItem.value = '';
 
     // fetch the data
-    setTimeout(() => {
-        fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchItemValue}`)
-            .then(res => res.json())
-            .then(data => {
-                const allCards = data.data;
-                const searchElement = allCards.filter(card => card.title.toLowerCase().trim().includes(searchItemValue));
-                displayIssues(searchElement);
-                removeSpinner();
-            })
-
-    }, 2000);
+    fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchItemValue}`)
+        .then(res => res.json())
+        .then(data => {
+            const allCards = data.data;
+            const searchElement = allCards.filter(card => card.title.toLowerCase().trim().includes(searchItemValue));
+            displayIssues(searchElement);
+            removeSpinner();
+        })
 })

@@ -4,14 +4,12 @@ let allIssues = [];
 const loadIssues = async () => {
     showSpinner();
     try {
-        setTimeout(async () => {
-            const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
-            const data = await res.json();
+        const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
+        const data = await res.json();
 
-            allIssues = data.data
-            displayIssues(allIssues);
-            removeSpinner();
-        }, 2000)
+        allIssues = data.data
+        displayIssues(allIssues);
+        removeSpinner();
     }
     catch (err) {
         alert('Error');
@@ -56,7 +54,7 @@ const displayIssues = (issues) => {
                         <h3 class="font-semibold text-sm text-[#1F2937]">${issue.title}</h3>
                         <p class="text-xs text-[#64748B]">${issue.description}</p>
                     </div>
-                    <div class="flex gap-1 items-center whitespace-nowrap mb-3">
+                    <div class="flex gap-1.5 items-center whitespace-nowrap mb-3">
                         ${labels(issue.labels)}
                     </div>
                     <hr class="text-gray-300 mb-3">
@@ -77,7 +75,7 @@ const displayIssues = (issues) => {
 
 // labels array
 const labels = (items) => {
-    const label = items.map(item => `<span class="px-1.5 py-2 bg-[#FFF8DB] text-[#D97706] rounded-[100px] font-medium text-xs">${item.toUpperCase()}</span>`)
+    const label = items.map(item => `<span class="px-1.5 py-2 flex items-center gap-1 rounded-[100px] font-medium text-[10px] ${item === 'bug' ? 'bg-[#FEECEC] text-[#EF4444] border border-[#FECACA]' : item === 'enhancement' ? 'bg-[#DEFCE8] text-[#00A96E] border border-[#BBF7D0]' : 'bg-[#FFF8DB] text-[#D97706] border border-[#FDE68A]'}">${item === 'bug' ? '<i class="fa-solid fa-bug"></i>' : item === 'enhancement' ? '<i class="fa-solid fa-wand-magic-sparkles"></i>' : '<i class="fa-regular fa-life-ring"></i>'} ${item.toUpperCase()}</span>`)
     return (label.join(" "));
 }
 

@@ -8,11 +8,8 @@ document.getElementById('all-btn').addEventListener('click', function () {
     document.getElementById('open-btn').classList.remove('btn-primary');
     document.getElementById('close-btn').classList.remove('btn-primary');
 
-    // fake delay
-    setTimeout(() => {
-        displayIssues(allIssues);
-        removeSpinner();
-    }, 2000);
+    displayIssues(allIssues);
+    removeSpinner();
 })
 
 // open button
@@ -28,11 +25,8 @@ document.getElementById('open-btn').addEventListener('click', function () {
     // filtering data
     const openIssues = allIssues.filter(open => open.status === 'open');
 
-    // fake delay
-    setTimeout(() => {
-        displayIssues(openIssues);
-        removeSpinner();
-    }, 2000);
+    displayIssues(openIssues);
+    removeSpinner();
 })
 
 // close button
@@ -48,9 +42,6 @@ document.getElementById('close-btn').addEventListener('click', function () {
     // filtering data
     const closeIssues = allIssues.filter(close => close.status === 'closed');
 
-    // fake delay
-    setTimeout(() => {
-        displayIssues(closeIssues);
-        removeSpinner();
-    }, 2000);
+    displayIssues(closeIssues);
+    removeSpinner();
 })
