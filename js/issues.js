@@ -29,7 +29,7 @@ const displayIssues = (issues) => {
     if (issues.length === 0) {
         issuesContainer.classList.remove('grid');
         issuesContainer.innerHTML = `
-        <div class="flex justify-center items-center w-full">
+        <div class="flex justify-center items-center w-full py-16">
             <h3 class="font-bold text-3xl">No Data Found</h3>
         </div>
     `
