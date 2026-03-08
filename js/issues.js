@@ -28,6 +28,17 @@ const displayIssues = (issues) => {
     const issuesContainer = document.getElementById('issues');
     issuesContainer.innerHTML = '';
 
+    if (issues.length === 0) {
+        issuesContainer.classList.remove('grid');
+        issuesContainer.innerHTML = `
+        <div class="flex justify-center items-center w-full">
+            <h3 class="font-bold text-3xl">No Data Found</h3>
+        </div>
+    `
+    }
+    else {
+        issuesContainer.classList.add('grid');
+    }
     issues.forEach(issue => {
 
         // created a card container
