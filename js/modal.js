@@ -6,6 +6,7 @@ const detailsModal = async (id) => {
 
         const modalBox = document.getElementById('issue-detail');
         const modalContainer = document.getElementById('modal-container');
+
         modalContainer.innerHTML = `
             <div class="space-y-3">
                 <h3 class="font-bold text-2xl text-[#1F2937]">${singleDetail.title}</h3>

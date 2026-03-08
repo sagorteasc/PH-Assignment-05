@@ -1,3 +1,5 @@
+let allIssues = [];
+
 // fetch issues
 const loadIssues = async () => {
     showSpinner();
@@ -5,25 +7,30 @@ const loadIssues = async () => {
         setTimeout(async () => {
             const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
             const data = await res.json();
-            displayIssues(data.data);
+
+            allIssues = data.data
+            displayIssues(allIssues);
             removeSpinner();
         }, 2000)
     }
     catch (err) {
-        alert('Error', err);
+        alert('Error');
     }
 }
 
 // display issues
 const displayIssues = (issues) => {
-    // static card counter
+
+    // dynamic card counter
     const issueCounter = document.getElementById('issues-count');
     issueCounter.innerText = issues.length;
 
     const issuesContainer = document.getElementById('issues');
+    issuesContainer.innerHTML = '';
 
     issues.forEach(issue => {
 
+        // created a card container
         const issueCards = document.createElement('div');
         issueCards.innerHTML = `
             <div onclick="detailsModal(${issue.id})" class="card bg-base-100 h-full shadow-sm border-t-5 ${issue.status === 'open' ? 'border-t-[rgb(99,230,190)]' : 'border-t-[rgb(177,151,252)]'}">
