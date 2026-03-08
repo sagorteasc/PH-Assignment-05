@@ -75,7 +75,7 @@ const displayIssues = (issues) => {
 
 // labels array
 const labels = (items) => {
-    const label = items.map(item => `<span class="px-1.5 py-2 flex items-center gap-0.5 rounded-[100px] font-medium text-[10px] ${item === 'bug' ? 'bg-[#FEECEC] text-[#EF4444] border border-[#FECACA]' : item === 'enhancement' ? 'bg-[#DEFCE8] text-[#00A96E] border border-[#BBF7D0]' : 'bg-[#FFF8DB] text-[#D97706] border border-[#FDE68A]'}">${item === 'bug' ? '<i class="fa-solid fa-bug"></i>' : item === 'enhancement' ? '<i class="fa-solid fa-wand-magic-sparkles"></i>' : '<i class="fa-regular fa-life-ring"></i>'} ${item.toUpperCase()}</span>`)
+    const label = items.map(item => `<span class="px-1.5 py-2 flex items-center gap-0.5 rounded-[100px] font-medium text-[9px] ${item === 'bug' ? 'bg-[#FEECEC] text-[#EF4444] border border-[#FECACA]' : item === 'enhancement' ? 'bg-[#DEFCE8] text-[#00A96E] border border-[#BBF7D0]' : 'bg-[#FFF8DB] text-[#D97706] border border-[#FDE68A]'}">${item === 'bug' ? '<i class="fa-solid fa-bug"></i>' : item === 'enhancement' ? '<i class="fa-solid fa-wand-magic-sparkles"></i>' : '<i class="fa-regular fa-life-ring"></i>'} ${item.toUpperCase()}</span>`)
     return (label.join(" "));
 }
 
